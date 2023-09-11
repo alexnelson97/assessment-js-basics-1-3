@@ -9,7 +9,8 @@
     It should be a string containing your best definition of what Git is.
 */
 
-//CODE HERE
+const gitDefinition =
+  "Git is a version control system that allows individuals and teams to track changes to projects.";
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -17,7 +18,8 @@
     It should be a string containing your best definition of what GitHub is.
 */
 
-//CODE HERE
+const gitHubDefinition =
+  "GitHub is a web-based platform and hosting service for version control using Git.";
 
 //////////////////PROBLEM 3////////////////////
 /*
@@ -25,7 +27,8 @@
     It should be a string containing your best definition of what 'git init' does.
 */
 
-//CODE HERE
+const gitInitDefinition =
+  "'git init' is a Git command used to initialize a new Git repository in the current directory.";
 
 //////////////////PROBLEM 4////////////////////
 /*
@@ -33,7 +36,8 @@
     It should be a string containing your best definition of what 'git clone' does.
 */
 
-//CODE HERE
+const gitCloneDefinition =
+  "'git clone' is a Git command used to create a copy of a remote Git repository on your local machine.";
 
 //////////////////PROBLEM 5////////////////////
 /*
@@ -41,7 +45,8 @@
     It should be a string containing your best definition of what 'git status' does.
 */
 
-//CODE HERE
+const gitStatusDefinition =
+  "'git status' is a Git command that provides information about the current state of your working directory and your Git repository.";
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -52,7 +57,10 @@
     It should be a string containing the code to add all files.
 */
 
-//CODE HERE
+const gitAddDefinition =
+  "'git add' is a Git command used to stage changes in your working directory for the next commit.";
+
+const gitAddCode = "git add .";
 
 //////////////////PROBLEM 7////////////////////
 /*
@@ -63,8 +71,10 @@
     It should be a string containing the code to commit using the message "initial commit".
 */
 
-//CODE HERE
+const gitCommitDefinition =
+  "'git commit' is a Git command used to record staged changes as a new commit in your repository's history.";
 
+const gitCommitCode = 'git commit -m "initial commit"';
 
 //////////////////PROBLEM 8////////////////////
 /*
@@ -72,4 +82,5 @@
     It should be a string containing your best definition of what 'git push' does.
 */
 
-//CODE HERE
+const gitPushDefinition =
+  "'git push' is a Git command used to upload local repository changes to a remote repository.";
