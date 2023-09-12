@@ -27,15 +27,13 @@
     in cents. 
 */
 
-const fujiAcres = [2, 3, 3, 2, 2, 2, 1]
-const galaAcres = [5, 2, 4, 3, 6, 2, 4]
-const pinkAcres = [1, 5, 4, 2, 1, 5, 4]
+const fujiAcres = [2, 3, 3, 2, 2, 2, 1];
+const galaAcres = [5, 2, 4, 3, 6, 2, 4];
+const pinkAcres = [1, 5, 4, 2, 1, 5, 4];
 
-const fujiPrice = .89 
-const galaPrice = .64
-const pinkPrice = .55
-
-
+const fujiPrice = 0.89;
+const galaPrice = 0.64;
+const pinkPrice = 0.55;
 
 // PROBLEM 1
 
@@ -49,11 +47,16 @@ const pinkPrice = .55
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
+//added empty array so I could add data to it from the for loop.
+const totalAcres = [];
 
+// I created a for loop that would be the same length as fujiAchres and also add all of the values from each of the array values from each orchard.
+for (let i = 0; i < fujiAcres.length; i++) {
+  totalAcres.push(fujiAcres[i] + galaAcres[i] + pinkAcres[i]);
+}
 
-
-
+// I then logged 'totalAcres' to the console.
+console.log(totalAcres);
 
 // PROBLEM 2
 
@@ -67,11 +70,14 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+// I created a variable of the sum of all the acres picked throughout the week
+const totalAcresPicked = totalAcres.reduce((acc, acres) => acc + acres, 0);
 
+// I then created a variable that found the average acres picked per day by taking the sum and then dividing it by 7.
+const averageDailyAcres = totalAcresPicked / 7;
 
-
-
+// I then logged 'totalDailyAcres' to the console.
+console.log(averageDailyAcres);
 
 // PROBLEM 3
 
@@ -102,12 +108,18 @@ const pinkPrice = .55
 
 */
 
-let acresLeft = 174 
-let days = 0
+let acresLeft = 174;
+let days = 0;
 
-// CODE HERE
-
-
+//create a while loop to find out when the acres left is less than 1
+while (acresLeft > 0) {
+  // Increment the days by 1
+  days++;
+  // Subtract the daily average from acresLeft
+  acresLeft -= averageDailyAcres;
+}
+// Log the number of days required to pick all apples
+console.log(days);
 
 // PROBLEM 4
 
@@ -133,16 +145,22 @@ let days = 0
     values to the new arrays.
 */
 
-// CODE HERE
+// Create copies of the original arrays
+const fujiTons = fujiAcres.slice();
+const galaTons = galaAcres.slice();
+const pinkTons = pinkAcres.slice();
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+// Calculate the daily tons picked for each variety
+for (let i = 0; i < fujiTons.length; i++) {
+  fujiTons[i] *= 6.5;
+  galaTons[i] *= 6.5;
+  pinkTons[i] *= 6.5;
+}
 
-
-
-
-
+// Log the arrays to the console
+console.log(fujiTons);
+console.log(galaTons);
+console.log(pinkTons);
 
 // PROBLEM 5
 
@@ -160,16 +178,24 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+// find the total pounds picked per variety
+const fujiPounds = fujiTons.reduce(
+  (total, dailyTons) => total + dailyTons * 2000,
+  0
+);
+const galaPounds = galaTons.reduce(
+  (total, dailyTons) => total + dailyTons * 2000,
+  0
+);
+const pinkPounds = pinkTons.reduce(
+  (total, dailyTons) => total + dailyTons * 2000,
+  0
+);
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
-
-
-
-
-
+// Log the total pounds picked per variety to the console
+console.log(fujiPounds);
+console.log(galaPounds);
+console.log(pinkPounds);
 
 // PROBLEM 6
 
@@ -187,16 +213,15 @@ let days = 0
     console. 
 */
 
-// CODE HERE
+// Calculate profits per variety (pounds * price)
+const fujiProfit = fujiPounds * fujiPrice;
+const galaProfit = galaPounds * galaPrice;
+const pinkProfit = pinkPounds * pinkPrice;
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
-
-
-
-
-
+// Log profits for each variety to the console
+console.log(fujiProfit);
+console.log(galaProfit);
+console.log(pinkProfit);
 
 // PROBLEM 7
 
@@ -208,4 +233,8 @@ let days = 0
     Log `totalProfit` to the console.
 */
 
-// CODE HERE
+// Calculate total profit (sum of profits for all varieties)
+const totalProfit = fujiProfit + galaProfit + pinkProfit;
+
+// Log the total profit to the console
+console.log(totalProfit);
